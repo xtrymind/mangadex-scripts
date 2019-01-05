@@ -177,10 +177,8 @@
           let zipFilename =
             chapterInfo.manga +
             (chapterInfo.language == "English" ? "" : " [" + language_iso[chapterInfo.language] + "]") +
-            " - c" + (chapterInfo.chapter < 100 ? chapterInfo.chapter < 10 ? '00' + chapterInfo.chapter : '0' + chapterInfo.chapter : chapterInfo.chapter) +
-            (chapterInfo.volume ? " (v" + (chapterInfo.volume < 10 ? '0' + chapterInfo.volume : chapterInfo.volume) + ")" : "") +
-            " [" + chapterInfo.groups + "]" +
-            (localStorage.getItem("file-extension") || '.zip');
+            " - Ch. " + (chapterInfo.chapter < 10 ? '0' + chapterInfo.chapter : chapterInfo.chapter) +
+            " - " + chapterInfo.title + (localStorage.getItem("file-extension") || '.zip');
           let page_count = chapterInfo.images.length;
           let active_downloads = 0;
           let failed = false;
